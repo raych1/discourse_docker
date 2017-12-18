@@ -99,7 +99,7 @@ ADD install-pngquant /tmp/install-pngquant
 RUN /tmp/install-pngquant
 
 #ADD phantomjs /usr/local/bin/phantomjs
-echo $PWD
+RUN echo 'current directory:' $PWD
 RUN download_phantomjs
 
 # Not using the official repo until they compile against a recent openssl
