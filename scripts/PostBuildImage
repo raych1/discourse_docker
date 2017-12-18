@@ -2,3 +2,6 @@
 
 docker_path=`which docker.io || which docker`
 $docker_path images
+#$docker_path login forumsnext.azurecr.io -u forumsnext -p VIcKBUEPKjrHNzXrz+PqHPbhEnDDULg8
+$docker_path tag local_discourse/app:latest forumsnext.azurecr.io/raych1/discourse_docker
+#$docker_path push forumsnext.azurecr.io/raych1/discourse_docker
