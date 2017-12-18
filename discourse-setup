@@ -318,7 +318,7 @@ ask_user_for_config() {
   hostname=$read_config_result
 
   local new_value=""
-  local config_ok="n"
+  local config_ok="y"
   local update_ok="y"
 
   echo ""
