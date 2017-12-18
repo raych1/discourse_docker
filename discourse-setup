@@ -70,6 +70,9 @@ check_and_install_docker () {
   lsb_release -a
   docker version
   sudo apt-get purge docker-ce
+  sudo apt-get purge docker-engine
+  sudo apt-get autoremove --purge docker-engine
+  rm -rf /var/lib/docker
   ##sudo rm -rf /var/lib/docker
   #wget -qO- https://get.docker.com/ | sh
   sudo curl https://get.docker.com/ | sh
