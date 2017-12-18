@@ -98,7 +98,8 @@ RUN /tmp/install-gifsicle
 ADD install-pngquant /tmp/install-pngquant
 RUN /tmp/install-pngquant
 
-ADD phantomjs /usr/local/bin/phantomjs
+#ADD phantomjs /usr/local/bin/phantomjs
+RUN ./download_phantomjs
 
 # Not using the official repo until they compile against a recent openssl
 # RUN cd tmp && wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2
