@@ -65,6 +65,8 @@ check_IP_match () {
 ## Do we have docker?
 ##
 check_and_install_docker () {
+  ## upgrade apt-get to fix debconf delaying package issue
+  apt-get update && apt-get install -y --no-install-recommends apt-utils
   curl https://get.docker.com/ | sh
   docker_path=`which docker.io || which docker`
   if [ -z $docker_path ]; then
