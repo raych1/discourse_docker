@@ -66,12 +66,13 @@ check_IP_match () {
 ##
 check_and_install_docker () {
   ## upgrade apt-get to fix debconf delaying package issue
-  lsb_release -a
   apt-get update && apt-get install -y --no-install-recommends apt-utils
+  lsb_release -a
+  docker version
   sudo apt-get purge docker-ce
   ##sudo rm -rf /var/lib/docker
-  wget -qO- https://get.docker.com/ | sh
-  #curl https://get.docker.com/ | sh
+  #wget -qO- https://get.docker.com/ | sh
+  sudo curl https://get.docker.com/ | sh
   docker_path=`which docker.io || which docker`
   if [ -z $docker_path ]; then
     read  -p "Docker not installed. Enter to install from https://get.docker.com/ or Ctrl+C to exit"
