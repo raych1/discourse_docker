@@ -1,0 +1,4 @@
+#!/bin/bash -e
+
+docker_path=`which docker.io || which docker`
+$docker_path images
